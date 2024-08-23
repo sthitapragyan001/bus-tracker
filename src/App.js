@@ -1,8 +1,7 @@
-import { useState,useEffect } from 'react';
+import { useState} from 'react';
 import './App.css';
-import Map from './Components/map';
-import Map_leaflet from './Components/map_leaflet';
 import GPSData from './Components/main_map';
+import Navbar from './Components/navbar';
 
 function App() {
 
@@ -17,10 +16,11 @@ function App() {
   }
   
   return (
-    <div className="App">
-      {/* <Map coord={{ lat: mcoord.lat.toString(), lon: mcoord.lon.toString() }} /> */}
-    {/* <Map_leaflet coord={{ lat: mcoord.lat.toString(), lon: mcoord.lon.toString() }}/> */}
-    <GPSData/>
+    <div className="App" >
+      <Navbar/>
+      <div style={{marginLeft:'5%',marginTop:5}}>
+      <GPSData/>
+      </div>
     </div>
   );
 }

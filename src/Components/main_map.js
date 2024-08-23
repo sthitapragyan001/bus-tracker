@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios'; // npm install axios
-import Map_leaflet from './map_leaflet';
-
+// import MapLeaflet from './map_leaflet';
+import MapLeaflet from './map_leaflet';
 const GPSData = () => {
-  const [latitude, setLatitude] = useState(null);
-  const [longitude, setLongitude] = useState(null);
+  const [latitude, setLatitude] = useState(28.54592009357561);
+  const [longitude, setLongitude] = useState(77.1857909916675);
   const ADAFRUIT_IO_USERNAME = 'arnav_abhishek_';
-  const ADAFRUIT_IO_KEY = 'aio_aaiv04vl9AUthUkrdD36WRJemXpA';
+  const ADAFRUIT_IO_KEY = 'aio_hmGk90o36NDNc8PwKozKQwojhZrT';
 
   const fetchGPSData = async () => {
     try {
@@ -24,7 +24,7 @@ const GPSData = () => {
       // let latdata= await latitudedata.json()
       // let longitudedata= await fetch(longitudeUrl)
       // let londata= await longitudedata.json()
-      console.log(locationResponse.data[0])
+
       setLatitude(locationResponse.data[0].lat);
       setLongitude(locationResponse.data[0].lon);
     } catch (error) {
@@ -35,18 +35,17 @@ const GPSData = () => {
 
   useEffect(() => {
     fetchGPSData(); // Initial fetch
-    const interval = setInterval(fetchGPSData, 2000); // Fetch every 1 seconds
+    const interval = setInterval(fetchGPSData, 1500); // Fetch every 1 seconds
 
     return () => clearInterval(interval); // Cleanup on unmount
   }, [latitude,longitude]);
-  if (latitude && longitude) {
+  
+  if (latitude!=='0' && longitude!=='0') {
     // data lagging alternate
     return (
-      <>
-        <Map_leaflet coord={{ lat: latitude.toString(), lon: longitude.toString() }} />
-        <h1>Latitute: {latitude} Longitude: {longitude}</h1>
-        
-      </>
+      <div>
+        <MapLeaflet coord={{ lat: latitude.toString(), lon: longitude.toString() }} />
+      </div>
     );
   }
   // [ latitude, longitude ]
