@@ -46,7 +46,7 @@ export default function MapLeaflet(props) {
       }
     }
     let closestPoint = buspath[closestIndex];
-    console.log({ lat: closestPoint.latitude, lon: closestPoint.longitude })
+    // console.log({ lat: closestPoint.latitude, lon: closestPoint.longitude })
     setcoord({ lat: closestPoint.latitude, lon: closestPoint.longitude })
     setpreviousIndex(closestIndex)
   }
