@@ -35,7 +35,7 @@ const GPSData = () => {
 
   useEffect(() => {
     fetchGPSData(); // Initial fetch
-    const interval = setInterval(fetchGPSData, 1500); // Fetch every 1 seconds
+    const interval = setInterval(fetchGPSData, 500); // Fetch every 1 seconds
 
     return () => clearInterval(interval); // Cleanup on unmount
   }, [latitude,longitude]);

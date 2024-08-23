@@ -63,7 +63,7 @@ export default function MapLeaflet(props) {
 const busicon = new Icon({
   iconUrl: busico,
   iconSize: [70, 80],
-  iconAnchor: [50,78]
+  iconAnchor: [35,70]
 
 })
 const usricon = new Icon({
@@ -114,7 +114,7 @@ return (
         You are here
       </Popup>
     </Marker>}
-    <Marker position={[coord.lat, coord.lon]} icon={busicon}>
+    <Marker id='bus' position={[coord.lat, coord.lon]} icon={busicon}>
       <Popup>
         Your Bus is here
       </Popup>
