@@ -33,8 +33,8 @@ export default function MapLeaflet(props) {
     } 
     else {
       // Subsequent iterations: Search within 10 points of the previous closest point
-      const startIndex = Math.max(previousIndex - 10, 0);
-      const endIndex = Math.min(previousIndex + 10, buspath.length - 1);
+      const startIndex = Math.max(previousIndex - 20, 0);
+      const endIndex = Math.min(previousIndex + 20, buspath.length - 1);
 
       let minDistance = Infinity;
       for (let i = startIndex; i <= endIndex; i++) {
