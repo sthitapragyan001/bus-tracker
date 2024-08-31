@@ -1,7 +1,8 @@
 import { useState} from 'react';
 import './App.css';
 import GPSData from './Components/main_map';
-import Navbar from './Components/navbar';
+import Navbar from './Components/screens/navbar';
+import CollapsibleSidebar from './Components/screens/sidebarnew';
 
 function App() {
 
@@ -18,6 +19,7 @@ function App() {
   return (
     <div className="App" >
       <Navbar/>
+      {/* <CollapsibleSidebar /> */}
       <div style={{marginLeft:'5%',marginTop:5}}>
       <GPSData/>
       </div>
