@@ -7,7 +7,7 @@ import busico from './markers/bus_marker.png'
 import usrico from './markers/user_loc_marker.png'
 import bus_stop_loc from './bus_stops_data';
 import bstp from './markers/bus_stop.png'
-import buspath from './output_path';
+import buspath from './output_path_old';
 
 export default function MapLeaflet(props) {
 
