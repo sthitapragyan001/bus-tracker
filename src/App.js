@@ -20,7 +20,7 @@ function App() {
     <div className="App" >
       <Navbar/>
       {/* <CollapsibleSidebar /> */}
-      <div style={{marginLeft:'5%',marginTop:5}}>
+      <div style={{marginLeft:'2%',marginTop:'1%',marginRight:'2%'}}>
       <GPSData/>
       </div>
     </div>

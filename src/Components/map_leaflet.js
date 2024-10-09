@@ -16,10 +16,10 @@ export default function MapLeaflet(props) {
   const [coord, setcoord] = useState({ lat: parseFloat(props.coord.lat), lon: parseFloat(props.coord.lon) })
   const [mapcenter, setmapcenter] = useState([28.54596301484667, 77.19319704919322])
   const [fly, setfly] = useState(false)
-  const [previousIndex, setpreviousIndex] = useState(null)
+  // const [previousIndex, setpreviousIndex] = useState(null)
 
   const updatemap = async () => {
-    let closestIndex;
+    // let closestIndex;
     let point = { "latitude": parseFloat(props.coord.lat), "longitude": parseFloat(props.coord.lon) }
     // if (previousIndex === null) {
     //   // First iteration: Search the entire path
@@ -91,6 +91,7 @@ export default function MapLeaflet(props) {
   const bstpicon = new Icon({
     iconUrl: bstp,
     iconSize: [80, 80],
+    iconAnchor: [35, 70]
 
   })
   useEffect(() => {
@@ -121,7 +122,7 @@ export default function MapLeaflet(props) {
     }
   });
   return (
-    <MapContainer id='mappy' style={{ height: window.innerHeight * 0.9, width: window.innerWidth * 0.9 }} center={[mapcenter[0], mapcenter[1]]} zoom={17} scrollWheelZoom={true}>
+    <MapContainer id='mappy' style={{ height: window.innerHeight * 0.8, width: window.innerWidth * 0.96 }} center={[mapcenter[0], mapcenter[1]]} zoom={17} scrollWheelZoom={true}>
       <TileLayer
         // attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
