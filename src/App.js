@@ -2,7 +2,7 @@ import { useState} from 'react';
 import './App.css';
 import GPSData from './Components/main_map';
 import Navbar from './Components/screens/navbar';
-import CollapsibleSidebar from './Components/screens/sidebarnew';
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 function App() {
 
@@ -18,11 +18,17 @@ function App() {
   
   return (
     <div className="App" >
+      <Router>
       <Navbar/>
       {/* <CollapsibleSidebar /> */}
       <div style={{marginLeft:'2%',marginTop:'1%',marginRight:'2%'}}>
-      <GPSData/>
+      <Routes>
+        <Route exact path='/' element={<GPSData/>}/>
+        <Route exact path='/Live_Location' element={<GPSData/>}/>
+        <Route exact path='/Bus_Schedule' element={<iframe className='pdf' src={require('./Components/screens/Bus_Schedule.pdf')} width={'90%'} style={{ marginTop:'4vh',height:'80vh'}}/>}/>
+      </Routes>
       </div>
+      </Router>
     </div>
   );
 }

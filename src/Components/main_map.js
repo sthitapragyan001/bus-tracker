@@ -10,13 +10,15 @@ const GPSData = () => {
   const [latitude, setLatitude] = useState(28.54592009357561);
   const [longitude, setLongitude] = useState(77.1857909916675);
   const [speed, setspeed] = useState(20)
+  const [modtime, setmodtime] = useState(null)
+  const [busav, setbusav] = useState('Inoperative')
   const [eta, seteta] = useState(null)
   const ADAFRUIT_IO_USERNAME = 'arnav_abhishek_';
   const ADAFRUIT_IO_KEY = 'aio_Cclw60UE183p4OXCnS1F2Uamf5X6';
   const [closestbusstop, setclosestbusstop] = useState([null, Infinity]);
   const [udistance, setUdistance] = useState(Infinity);
   const [nextstop, setNextstop] = useState(null);
-  const [nextstopdistance, setnextstopdistance] = useState(null)
+  const [nextstopdistance, setnextstopdistance] = useState(0)
   const bus_stop_length = bus_stop_loc.length;
   const fetchGPSData = async () => {
     try {
@@ -37,7 +39,19 @@ const GPSData = () => {
       let closestIndex;
       let point = { "latitude": parseFloat(locationResponse.data[0].lat), "longitude": parseFloat(locationResponse.data[0].lon) }
       // let speed = parseFloat(locationResponse.data[0].speed)
-
+      let modtime = new Date(locationResponse.data[0].created_at)
+      let curr = new Date();
+      let busav='Inoperative';
+      if ( modtime.toDateString() === curr.toDateString()) {
+        if (modtime.getHours() === curr.getHours()) {
+          if ((parseInt(curr.getMinutes()) - parseInt(modtime.getMinutes()))<5) {
+            busav = 'Running'
+          }
+          else {
+            busav = 'Inoperative'
+          }
+        }
+      }
       let minDistance = Infinity;
       buspath.forEach((coord, index) => {
         const distance = haversine(point, coord);
@@ -101,10 +115,12 @@ const GPSData = () => {
       else {
         tim = (t).toFixed(1)+' mins'
       }
+      setbusav(busav)
       setspeed(speed)
       setnextstopdistance(nsd)
       setUdistance(udistance)
       seteta(tim)
+      setmodtime(modtime)
       setclosestbusstop([cstop.name, minDistance2]);
       setLatitude(closestPoint.latitude);
       setLongitude(closestPoint.longitude);
@@ -126,12 +142,22 @@ const GPSData = () => {
 
     return (
       <div>
-        <div className='container-fluid' >
-        
-          {/* <h4>Nearest Stop: {closestbusstop[0]}</h4> */}
+        <div className='row'>
+          {busav==='Running'&&<div className='col-sm'>
           <h4>Next Stop: <mark>{nextstop}</mark></h4>
-          <h4>Estimated Arrival Time:<mark>{eta}</mark></h4>
-          
+          </div>}
+          {<div className='col-sm'>
+          <h4>Status: <mark>{busav}</mark></h4>
+          </div>}
+          {busav==='Running'&&<div className='col-sm'>
+          <h4>Estimated Arrival Time:<mark>{eta}</mark></h4> 
+          </div>}
+          {/* <div className='col-sm'>
+          <h4>Distance to Next Stop: <mark>{nextstopdistance.toFixed(0)} m</mark></h4>
+          </div>
+          <div className='col-sm'>
+          <h4>Speed: <mark>{speed} km/hr</mark></h4>   
+          </div> */}
         </div>
         <MapLeaflet coord={{ lat: latitude.toString(), lon: longitude.toString() }} />
       </div>
