@@ -20,19 +20,19 @@ export default function Navbar(props) {
     return (
         <div className='container-fluid' style={{paddingTop:'1%', marginRight: '2%'}} >
             <div style={{ display: 'inline' }}>
-                <a href="https://roboticsclub.iitd.ac.in" target="_blank" rel="noreferrer" style={{ float: 'left' }}><img src='./Logo.png' height='50vh' width='70vw' /></a>
+                <a href="https://roboticsclub.iitd.ac.in" target="_blank" rel="noreferrer" style={{ float: 'left' }}><img src={require('./Logo.png')} height='50vh' width='70vw' /></a>
                 <b style={{ fontSize: '240%', textAlign: 'center' }}>{props.heading}</b>
                 <div class="dropdown" style={{ display: 'inline', float: 'right' }}><button class="btn btn-sm" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><b style={{ fontSize: '170%', verticalAlign: 'top' }}>&#9776;</b></button>
                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenu2" style={{ minWidth: 175 }}>
                         <View style={styles.header} >
                             <View style={styles.headerText}>
-                                <a href='./Live_Location' style={{ textDecoration: 'none' }}>
+                                <a href='./#/Live_Location' style={{ textDecoration: 'none' }}>
                                     <Text style={styles.title}><img src={require('./radar.gif')} height='30' width='30' /> Live Location</Text>
                                 </a>
                             </View>
                         </View>
                         <li style={{ marginLeft: '5%' }}>
-                            <a href='./Bus_stops' style={{ textDecoration: 'none' }}>
+                            <a href='./#/Bus_stops' style={{ textDecoration: 'none' }}>
                             <Pressable style={styles.menuItem}>
                                 <Image source={require("./bus-removebg-preview.png")} style={{ width: 20, height: 20, marginBottom: 0 }} />
                                 <Text style={styles.menuText}>Bus Stops</Text>
@@ -40,7 +40,7 @@ export default function Navbar(props) {
                             </a>
                         </li>
                         <li style={{ marginLeft: '5%' }}>
-                            <a href='./Bus_Schedule' style={{ textDecoration: 'none' }}>
+                            <a href='./#/Bus_Schedule' style={{ textDecoration: 'none' }}>
                             {/* <a href={require('./Bus_Schedule.pdf')} target='_blank' rel="noreferrer" style={{ textDecoration: 'none' }}> */}
                             <Pressable style={styles.menuItem}>
                                 <Image source={require("./clock-time-four-removebg-preview.png")} style={{ width: 20, height: 20, marginBottom: 0 }} />
@@ -63,7 +63,7 @@ export default function Navbar(props) {
                         </Pressable>
                     </li>
                     <li style={{ marginLeft: '5%' }}>
-                        <a href='./About_Us' style={{ textDecoration: 'none' }}>
+                        <a href='./#/About_Us' style={{ textDecoration: 'none' }}>
                         <Pressable style={styles.menuItem}>
                             <Image source={require("./account-group-removebg-preview.png")} style={{ width: 20, height: 20, marginBottom: 0 }} />
                             <Text style={styles.menuText}>The Team</Text>
@@ -71,7 +71,7 @@ export default function Navbar(props) {
                     </a>
                     </li>
                     <li style={{ marginLeft: '5%' }}>
-                    <a href='./Journey_so_far' style={{ textDecoration: 'none' }}>
+                    <a href='./#/Journey_so_far' style={{ textDecoration: 'none' }}>
                         <Pressable style={styles.menuItem}>
                             <Image source={require("./map-search-outline-removebg-preview.png")} style={{ width: 20, height: 20, marginBottom: 0 }} />
                             <Text style={styles.menuText}>Our Story</Text>

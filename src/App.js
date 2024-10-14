@@ -2,7 +2,7 @@ import { useState,useEffect} from 'react';
 import './App.css';
 import GPSData from './Components/main_map';
 import Navbar from './Components/screens/navbar';
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { HashRouter as Router, Routes, Route } from "react-router-dom";
 import JourneySoFar from './Components/journeysofar';
 import TeamStructure from './Components/team';
 
