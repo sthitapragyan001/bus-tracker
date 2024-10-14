@@ -49,7 +49,7 @@ const TeamStructure = () => {
       {/* <h1 className='teamtitle'>
         THE TEAM
       </h1> */}
-      <div className='container' style={{marginInlineStart:'21vw'}} >
+      <div className='container' >
         {team.mentors.map((member) => {
           return (
             <div className='column' key={member.id} style={{float:'left'}}>

@@ -10,6 +10,9 @@
     background-blend-mode: darken; */
     background-image: transparent;
 }
+.container{
+  margin-inline-start: 21vw;
+}
 .teamtitle{
   padding-top: 5%;
   padding-bottom: 10%;
@@ -130,15 +133,25 @@
 
   /* Display the columns below each other instead of side by side on small screens */
   @media screen and (max-width: 650px) {
+    .container {
+      display: flex;
+      margin-left: 10vw;
+      width: 100%;
+      padding: 0;
+      /* margin: auto; */
+    }
+    .team{
+      width: 80vw;
+    }
     .column {
       float: right;
-      width: 50vw;
+      width: 40vw;
       margin-bottom: 16px;
       padding: 0 4vw;
       margin-left: 2vw;
     }
     .trow{
-      width: 85vw;
+      width: 100vw;
         margin: auto;
         display: flex;
         flex-wrap: wrap;
@@ -147,14 +160,14 @@
     }
     .infocont {
       width:100%;
-      font-size:2vw;
+      font-size:1.8vw;
       font-family: 'AudioWide';
       justify-content:'center';
       padding-top: 1vw;
     }
     .exeinfocont{
       width:100%;
-      font-size:1.8vw;
+      font-size:1.7vw;
       font-family: 'AudioWide';
       justify-content:'center';
       padding-top: 1vw;
