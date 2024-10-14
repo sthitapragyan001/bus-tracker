@@ -9,8 +9,8 @@ import TeamStructure from './Components/team';
 function App() {
   const [navhead,setnavhead] = useState('Bus Tracker IITD')
   useEffect(() => {
+    const updateNavhead = () => {
     let pathname = window.location.hash;
-    console.log(pathname)
     if (pathname === '/') {
       setnavhead('Bus Tracker IITD')
       }
@@ -29,7 +29,18 @@ function App() {
     else if (pathname === '#/Bus_stops') {
     setnavhead('Bus Stops')
     }
-  })
+  };
+    // Update navhead on initial render
+    updateNavhead();
+
+    // Add event listener for hash changes
+    window.addEventListener('hashchange', updateNavhead);
+
+    // Cleanup event listener on component unmount
+    return () => {
+      window.removeEventListener('hashchange', updateNavhead);
+    };
+  }, []);
   
   
   return (
@@ -44,8 +55,8 @@ function App() {
         <Route exact path='/Bus_Schedule' element={<iframe title='bus_sch' className='pdf' src={require('./Components/screens/Bus_Schedule.pdf')} width={'90%'} style={{ marginTop:'4vh',height:'80vh'}}/>}/>
         <Route exact path='/About_Us' element={<TeamStructure />}/>
         <Route exact path='/Journey_so_far' element={<JourneySoFar/>}/>
-        <Route path='/Bus_stops' element={<img className='busstops' src={require('./Components/screens/bus_route.jpeg')} />}/>
-        <Route path='*' element={<GPSData/>}/>
+        <Route exact path='/Bus_stops' element={<img className='busstops' src={require('./Components/screens/bus_route.jpeg')} />}/>
+        {/* <Route path='*' element={<GPSData/>}/> */}
       </Routes>
       </div>
       </Router>
