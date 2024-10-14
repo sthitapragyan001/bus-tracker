@@ -1,0 +1,175 @@
+/* Three columns side by side */
+.team
+{
+  margin-top: 5%;
+    /* background-image: url(teambg.jpg);
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-blend-mode: darken; */
+    background-image: transparent;
+}
+.teamtitle{
+  padding-top: 5%;
+  padding-bottom: 10%;
+  text-shadow: 0 0 50px rgb(156, 52, 11);
+  font-family: "Zen Dots";
+  width: 100%;
+  font-size: 10vw;
+  text-align: center;
+  color:white;
+}
+.trow{
+  width: 85vw;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding-bottom: 8%;
+}
+.column {
+    float: center;
+    width: 24vw;
+    margin-bottom: 16px;
+    padding: 0 4vw;
+    margin-left: 2vw;
+  }
+  .columnthin {
+    float: center;
+    width: 14vw;
+    margin-bottom: 16px;
+    padding: 0 0.5vw;
+  }
+  
+  .xtra{
+    margin-left: 1%;
+    margin-right: 1%;
+    content-visibility: hidden;
+    opacity: 0;
+    -webkit-transition: all 1000ms ease-in-out;
+    -moz-transition: all 1000ms ease-in-out;
+    -ms-transition: all 1000ms ease-in-out;
+    -o-transition: all 1000ms ease-in-out;
+    transition: all 1000ms ease-in-out;
+  }
+  .xtra p{
+    margin-bottom: 0;
+    font-size:'1.0vw'
+  }
+  /* .xtra:hover{
+    color: bisque;
+    font-size: large;
+  } */
+  /* Add some shadows to create a card effect */
+  .memcard {
+    box-shadow: 0 4px 8px 0 rgba(147, 9, 138, 0.2);
+    background: #000;
+    transition: 1.0s;
+    width: 100%;
+    border-radius: 50px;
+    text-align: center;
+    color: white;
+    padding-bottom: 2%;
+  }
+  .memcard p{
+    font-size: 140%;
+  }
+  #arr {
+    visibility: visible;
+  }
+
+  .infocont:hover + .xtra{
+    z-index: 100;
+    content-visibility: visible;
+    color: bisque;
+    opacity: 1;
+    
+  }
+  .exeinfocont:hover + .xtra{
+    z-index: 100;
+    content-visibility: visible;
+    color: bisque;
+    opacity: 1;
+    
+  }
+  /* .contact{
+    content-visibility: hidden;
+  }
+  .infocont:hover+.contact{
+    content-visibility: visible;
+  } */
+  .memcard:hover{
+    z-index: 30;
+    transform: translate3D(0,-1px,0) scale(1.1);
+    /* background-image: url(cardbg.gif); */
+    /* background-image: linear-gradient(to bottom left, rgb(0, 0, 0), rgb(142, 40, 40)); */
+    color:orangered;
+    border-radius: 20px;
+    
+  }
+  
+  /* Some left and right padding inside the container */
+  .infocont {
+    width:100%;
+    font-size:1.3vw;
+    font-family: 'AudioWide';
+    justify-content:'center';
+    padding-top: 1vw;
+  }
+  .exeinfocont{
+    width:100%;
+    font-size:1.2vw;
+    font-family: 'AudioWide';
+    justify-content:'center';
+    padding-top: 1%;
+    padding-left: 1%;
+    padding-right: 1%;
+  }
+
+  /* Display the columns below each other instead of side by side on small screens */
+  @media screen and (max-width: 650px) {
+    .column {
+      float: right;
+      width: 50vw;
+      margin-bottom: 16px;
+      padding: 0 4vw;
+      margin-left: 2vw;
+    }
+    .trow{
+      width: 85vw;
+        margin: auto;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: flex-start;
+        justify-content: center;
+    }
+    .infocont {
+      width:100%;
+      font-size:2vw;
+      font-family: 'AudioWide';
+      justify-content:'center';
+      padding-top: 1vw;
+    }
+    .exeinfocont{
+      width:100%;
+      font-size:1.8vw;
+      font-family: 'AudioWide';
+      justify-content:'center';
+      padding-top: 1vw;
+    }
+    .columnthin {
+      float: center;
+      width: 29vw;
+      margin-bottom: 16px;
+      padding: 0 2vw;
+    }
+    .memcard p{
+      font-size: 250%;
+    }
+    .xtra p{
+      font-size:5vw
+    }
+  }
+  

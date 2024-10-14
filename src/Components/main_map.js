@@ -141,15 +141,15 @@ const GPSData = () => {
     // data lagging alternate
 
     return (
-      <div>
-        <div className='row'>
-          {busav==='Running'&&<div className='col-sm'>
+      <div >
+        <div className='row' style={{width:'96%',margin:'2%',justifySelf:'center'}}>
+          {busav==='Running'&&<div className='col-md'>
           <h4>Next Stop: <mark>{nextstop}</mark></h4>
           </div>}
-          {<div className='col-sm'>
+          {<div className='col-md'>
           <h4>Status: <mark>{busav}</mark></h4>
           </div>}
-          {busav==='Running'&&<div className='col-sm'>
+          {busav==='Running'&&<div className='col-md'>
           <h4>Estimated Arrival Time:<mark>{eta}</mark></h4> 
           </div>}
           {/* <div className='col-sm'>

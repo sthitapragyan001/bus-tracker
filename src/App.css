@@ -7,10 +7,31 @@
   pointer-events: none;
 }
 
+.busstops{
+  width: 50%;
+  padding-top: 2%;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: center;
+}
+
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
   }
+}
+@media screen and (max-width: 650px) {
+  .busstops{
+    width: 90%;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: center;
+  }
+
 }
 
 .App-header {
