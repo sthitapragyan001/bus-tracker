@@ -38,13 +38,13 @@ const GPSData = () => {
       // let londata= await longitudedata.json()
       let closestIndex;
       let point = { "latitude": parseFloat(locationResponse.data[0].lat), "longitude": parseFloat(locationResponse.data[0].lon) }
-      // let speed = parseFloat(locationResponse.data[0].speed)
+      let speed = parseFloat(locationResponse.data[0].ele)
       let modtime = new Date(locationResponse.data[0].created_at)
       let curr = new Date();
       let busav='Inoperative';
       if ( modtime.toDateString() === curr.toDateString()) {
         if (modtime.getHours() === curr.getHours()) {
-          if ((parseInt(curr.getMinutes()) - parseInt(modtime.getMinutes()))<5) {
+          if ((parseInt(curr.getMinutes()) - parseInt(modtime.getMinutes()))<3) {
             busav = 'Running'
           }
           else {
@@ -74,10 +74,11 @@ const GPSData = () => {
       })
       let cstop = bus_stop_loc[cbs];
       let nsd;
-      if (cbs < bus_stop_length) {
+      let nudistance;
+      if (cbs < bus_stop_length-1) {
         let ustop = bus_stop_loc[cbs + 1];
         let ucoord = { "latitude": parseFloat(ustop.latitude), "longitude": parseFloat(ustop.longitude) };
-        let nudistance = haversine(closestPoint, ucoord);
+        nudistance = haversine(closestPoint, ucoord);
         if ((minDistance2 > closestbusstop[1]) && (nudistance < udistance)) {
           setNextstop(ustop.name);
           nsd = nudistance
@@ -116,10 +117,16 @@ const GPSData = () => {
         tim = (t).toFixed(1)+' mins'
       }
       setbusav(busav)
-      setspeed(speed)
+      // console.log(speed)
       setnextstopdistance(nsd)
-      setUdistance(udistance)
-      seteta(tim)
+      setUdistance(nudistance)
+      setspeed(speed)
+      if (speed === 0 || speed === null) {
+        seteta('N/A')
+      }
+      else {
+        seteta(tim)
+      }
       setmodtime(modtime)
       setclosestbusstop([cstop.name, minDistance2]);
       setLatitude(closestPoint.latitude);

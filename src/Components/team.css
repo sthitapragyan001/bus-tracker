@@ -65,7 +65,7 @@
   /* Add some shadows to create a card effect */
   .memcard {
     box-shadow: 0 4px 8px 0 rgba(147, 9, 138, 0.2);
-    background: #000;
+    background: black;
     transition: 1.0s;
     width: 100%;
     border-radius: 50px;
