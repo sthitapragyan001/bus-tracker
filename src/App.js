@@ -25,7 +25,7 @@ function App() {
       <Routes>
         <Route exact path='/' element={<GPSData/>}/>
         <Route exact path='/Live_Location' element={<GPSData/>}/>
-        <Route exact path='/Bus_Schedule' element={<iframe className='pdf' src={require('./Components/screens/Bus_Schedule.pdf')} width={'90%'} style={{ marginTop:'4vh',height:'80vh'}}/>}/>
+        <Route exact path='/Bus_Schedule' element={<iframe title='bus_sch' className='pdf' src={require('./Components/screens/Bus_Schedule.pdf')} width={'90%'} style={{ marginTop:'4vh',height:'80vh'}}/>}/>
       </Routes>
       </div>
       </Router>
