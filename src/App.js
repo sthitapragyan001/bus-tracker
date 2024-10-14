@@ -13,19 +13,19 @@ function App() {
     if (pathname === '/') {
       setnavhead('Bus Tracker IITD')
       }
-    else if (pathname === '/Live_Location') {
+    else if (pathname === '/#/Live_Location') {
       setnavhead('Bus Tracker IITD')
       }
-    else if (pathname === '/Bus_Schedule') {
+    else if (pathname === '/#/Bus_Schedule') {
     setnavhead('Bus Schedule')
     }
-    else if (pathname === '/About_Us') {
+    else if (pathname === '/#/About_Us') {
     setnavhead('Our Team')
     }
-    else if (pathname === '/Journey_so_far') {
+    else if (pathname === '/#/Journey_so_far') {
     setnavhead('Our Journey')
     }
-    else if (pathname === '/Bus_stops') {
+    else if (pathname === '/#/Bus_stops') {
     setnavhead('Bus Stops')
     }
 
