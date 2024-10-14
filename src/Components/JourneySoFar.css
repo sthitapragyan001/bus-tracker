@@ -12,7 +12,7 @@ body {
     position: absolute;
     width: 6px;
     background-color: orange;
-    top: 30px; /* Start the line below the first stage's top */
+    top: 300px; /* Start the line below the first stage's top */
     bottom: 0;
     left: 50%;
     margin-left: -3px; /* Center the line */
@@ -99,7 +99,7 @@ body {
       left: 0 !important;
     }
     .timeline:before {
-      left: auto;
+      left: 50%;
     }
     .timeline-content {
       width: calc(100%);
