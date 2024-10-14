@@ -28,7 +28,8 @@ The Bus Tracker project provides real-time tracking and updates for bus routes, 
     ```sh
     npm run build
     ```
-2. Deploy the build directory to your server.
+2. Deploy the build directory to your server. 
+3. For deploying to Github Pages npm run deploy.
 
 ## Usage
 1. Start the server:
