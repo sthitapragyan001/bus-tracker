@@ -108,6 +108,9 @@ const GPSData = () => {
           nsd = ddistance
         }
       }
+      if (speed === 0 || speed === null) {
+        speed = 10
+      }
       let t = nsd / (speed * 100 / 6);
       let tim;
       if (t < 1) {
@@ -117,16 +120,10 @@ const GPSData = () => {
         tim = (t).toFixed(1)+' mins'
       }
       setbusav(busav)
-      // console.log(speed)
       setnextstopdistance(nsd)
       setUdistance(nudistance)
       setspeed(speed)
-      if (speed === 0 || speed === null) {
-        seteta('N/A')
-      }
-      else {
-        seteta(tim)
-      }
+      seteta(tim)
       setmodtime(modtime)
       setclosestbusstop([cstop.name, minDistance2]);
       setLatitude(closestPoint.latitude);
