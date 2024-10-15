@@ -161,6 +161,7 @@
     .infocont {
       width:100%;
       font-size:1.8vw;
+      text-wrap: wrap;
       font-family: 'AudioWide';
       justify-content:'center';
       padding-top: 1vw;
@@ -182,7 +183,7 @@
       font-size: 250%;
     }
     .xtra p{
-      font-size:5vw
+      font-size:3vw
     }
   }
   

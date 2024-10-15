@@ -13,8 +13,8 @@ const TeamStructure = () => {
         </div>
         {/* <img id='arr' src={require('./downarrow.png')}/> */}
         <div className='xtra'>
-          <p style={{fontSize:'1.0vw'}}>{member.dept} </p>
-          <p style={{fontSize:'1.0vw'}}>{member.hostel} </p>
+          <p >{member.dept} </p>
+          <p >{member.hostel} </p>
         </div>
         <div className='contact' style={{ display: 'inline-block',paddingBottom:'10%' }}>
           <a href={member.linkedin} target='_blank' ><img src={require('./linkedin.png')} width={'15%'} /></a>
