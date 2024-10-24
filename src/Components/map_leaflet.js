@@ -122,7 +122,7 @@ export default function MapLeaflet(props) {
     }
   });
   return (
-    <MapContainer id='mappy' style={{ height: window.innerHeight * 0.75, width: window.innerWidth * 0.96 }} center={[mapcenter[0], mapcenter[1]]} zoom={17} scrollWheelZoom={true}>
+    <MapContainer id='mappy' style={{ height: window.innerHeight * 0.8, width: window.innerWidth * 0.96 }} center={[mapcenter[0], mapcenter[1]]} zoom={17} scrollWheelZoom={true}>
       <TileLayer
         // attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
