@@ -1,6 +1,7 @@
 /* Three columns side by side */
 .team
 {
+  width: 100%;
   margin-top: 5%;
     /* background-image: url(teambg.jpg);
     background-attachment: fixed;
@@ -68,12 +69,12 @@
   /* Add some shadows to create a card effect */
   .memcard {
     box-shadow: 0 4px 8px 0 rgba(147, 9, 138, 0.2);
-    background: black;
+    background: white;
     transition: 1.0s;
     width: 100%;
     border-radius: 50px;
     text-align: center;
-    color: white;
+    color: black;
     padding-bottom: 2%;
   }
   .memcard p{
@@ -86,14 +87,14 @@
   .infocont:hover + .xtra{
     z-index: 100;
     content-visibility: visible;
-    color: bisque;
+    color: blue;
     opacity: 1;
     
   }
   .exeinfocont:hover + .xtra{
     z-index: 100;
     content-visibility: visible;
-    color: bisque;
+    color: blue;
     opacity: 1;
     
   }
@@ -116,6 +117,7 @@
   /* Some left and right padding inside the container */
   .infocont {
     width:100%;
+    min-height: 10vh;
     font-size:1.3vw;
     font-family: 'AudioWide';
     justify-content:'center';
@@ -123,12 +125,12 @@
   }
   .exeinfocont{
     width:100%;
+    min-height: 10vh;
     font-size:1.2vw;
     font-family: 'AudioWide';
-    justify-content:'center';
-    padding-top: 1%;
-    padding-left: 1%;
-    padding-right: 1%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
   /* Display the columns below each other instead of side by side on small screens */
