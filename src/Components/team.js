@@ -62,7 +62,7 @@ const TeamStructure = () => {
       <div className='trow'>
         {team.executives.map((member) => {
           return (
-            <div className='column' key={member.id}>
+            <div className='columnthin' key={member.id}>
               {execard(member)}
             </div>
           )

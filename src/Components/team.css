@@ -42,7 +42,7 @@
   }
   .columnthin {
     float: center;
-    width: 14vw;
+    width: 20vw;
     margin-bottom: 16px;
     padding: 0 0.5vw;
   }
@@ -87,14 +87,14 @@
   .infocont:hover + .xtra{
     z-index: 100;
     content-visibility: visible;
-    color: blue;
+    color: black;
     opacity: 1;
     
   }
   .exeinfocont:hover + .xtra{
     z-index: 100;
     content-visibility: visible;
-    color: blue;
+    color: black;
     opacity: 1;
     
   }
