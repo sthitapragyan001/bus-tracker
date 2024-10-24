@@ -41,10 +41,10 @@ const GPSData = () => {
       let speed = parseFloat(locationResponse.data[0].ele)
       let modtime = new Date(locationResponse.data[0].created_at)
       let curr = new Date();
-      let busav='Inoperative';
-      if ( modtime.toDateString() === curr.toDateString()) {
+      let busav = 'Inoperative';
+      if (modtime.toDateString() === curr.toDateString()) {
         if (modtime.getHours() === curr.getHours()) {
-          if ((parseInt(curr.getMinutes()) - parseInt(modtime.getMinutes()))<3) {
+          if ((parseInt(curr.getMinutes()) - parseInt(modtime.getMinutes())) < 3) {
             busav = 'Running'
           }
           else {
@@ -75,7 +75,7 @@ const GPSData = () => {
       let cstop = bus_stop_loc[cbs];
       let nsd;
       let nudistance;
-      if (cbs < bus_stop_length-1) {
+      if (cbs < bus_stop_length - 1) {
         let ustop = bus_stop_loc[cbs + 1];
         let ucoord = { "latitude": parseFloat(ustop.latitude), "longitude": parseFloat(ustop.longitude) };
         nudistance = haversine(closestPoint, ucoord);
@@ -117,7 +117,7 @@ const GPSData = () => {
         tim = (t * 60).toFixed(0) + ' sec'
       }
       else {
-        tim = (t).toFixed(1)+' mins'
+        tim = (t).toFixed(1) + ' mins'
       }
       setbusav(busav)
       setnextstopdistance(nsd)
@@ -141,20 +141,19 @@ const GPSData = () => {
     return () => clearInterval(interval); // Cleanup on unmount
   }, [latitude, longitude]);
 
-  if (latitude !== '0' && longitude !== '0') {
+  if (parseInt(latitude) !== 0 && parseInt(longitude) !== 0) {
     // data lagging alternate
-
     return (
       <div >
-        <div className='row' style={{width:'96%',margin:'2%',justifySelf:'center'}}>
-          {busav==='Running'&&<div className='col-md'>
-          <h4>Next Stop: <mark>{nextstop}</mark></h4>
+        <div className='row' style={{ width: '96%', margin: '2%', justifySelf: 'center' }}>
+          {busav === 'Running' && <div className='col-md'>
+            <h4>Next Stop: <mark>{nextstop}</mark></h4>
           </div>}
-          {<div className='col-md'>
-          <h4>Status: <mark>{busav}</mark></h4>
+          {busav === 'Inoperative' && <div className='col-md'>
+            <h4><mark>Bus Inoperative</mark></h4>
           </div>}
-          {busav==='Running'&&<div className='col-md'>
-          <h4>Estimated Arrival Time:<mark>{eta}</mark></h4> 
+          {busav === 'Running' && <div className='col-md'>
+            <h4>Estimated Arrival Time:<mark>{eta}</mark></h4>
           </div>}
           {/* <div className='col-sm'>
           <h4>Distance to Next Stop: <mark>{nextstopdistance.toFixed(0)} m</mark></h4>
@@ -166,6 +165,27 @@ const GPSData = () => {
         <MapLeaflet coord={{ lat: latitude.toString(), lon: longitude.toString() }} />
       </div>
     );
+  }
+  else {
+    if (busav === 'Running') {
+      return (
+        <div>
+          <h4><mark>Loading...</mark></h4>
+          <MapLeaflet coord={null} />
+        </div>
+      );
+
+    }
+    else {
+      return (
+        <div>
+          {busav === 'Inoperative' && <div className='col-md'>
+            <h4><mark>Bus Inoperative</mark></h4>
+            <MapLeaflet coord={null} />
+          </div>}
+        </div>
+      );
+    }
   }
   // [ latitude, longitude ]
   // variables storing lat and long

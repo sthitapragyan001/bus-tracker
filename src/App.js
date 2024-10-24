@@ -7,15 +7,15 @@ import JourneySoFar from './Components/journeysofar';
 import TeamStructure from './Components/team';
 
 function App() {
-  const [navhead,setnavhead] = useState('Bus Tracker IITD')
+  const [navhead,setnavhead] = useState(`IITD ShuttleTrack`);
   useEffect(() => {
     const updateNavhead = () => {
     let pathname = window.location.hash;
     if (pathname === '/') {
-      setnavhead('Bus Tracker IITD')
+      setnavhead('IITD ShuttleTrack')
       }
     else if (pathname === '#/Live_Location') {
-      setnavhead('Bus Tracker IITD')
+      setnavhead('IITD ShuttleTrack')
       }
     else if (pathname === '#/Bus_Schedule') {
     setnavhead('Bus Schedule')
