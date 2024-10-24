@@ -6,7 +6,7 @@ const TeamStructure = () => {
   const memcard = (member) => {
     return (
       <div class="memcard" style={{ marginLeft: 'auto', marginRight: 'auto' }}>
-        <img id='dp' src={require(`./pics/${member.id}.jpg`)} alt={member.name} style={{ borderRadius: 40, marginTop: '5%', aspectRatio:1,width:'90%'  }} />
+        <img id='dp' src={require(`./pics/${member.id}.jpg`)} alt={member.name} style={{ borderRadius: 5, marginTop: '5%', aspectRatio:1,width:'90%'  }} />
         <div className="infocont">
           <p>{member.name}</p>
           <p>{member.post}</p>
@@ -26,7 +26,7 @@ const TeamStructure = () => {
   const execard = (member) => {
     return (
       <div class="memcard" style={{ marginLeft: 'auto', marginRight: 'auto' }}>
-        <img id='dp' src={require(`./pics/${member.id}.jpg`)} alt={member.name} style={{ borderRadius: 40, marginTop: '5%', aspectRatio:1,width:'90%'  }} />
+        <img id='dp' src={require(`./pics/${member.id}.jpg`)} alt={member.name} style={{ borderRadius: 5, marginTop: '5%', aspectRatio:1,width:'90%'  }} />
         <div className="exeinfocont">
           <p>{member.name}</p>
           {/* <p>{member.post}</p> */}

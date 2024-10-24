@@ -68,7 +68,7 @@
   } */
   /* Add some shadows to create a card effect */
   .memcard {
-    box-shadow: 0 4px 8px 0 rgba(147, 9, 138, 0.2);
+    /* box-shadow: 0 2px 4px 0 rgba(147, 9, 138, 0.2); */
     background: white;
     transition: 1.0s;
     width: 100%;
@@ -164,9 +164,11 @@
       width:100%;
       font-size:1.8vw;
       text-wrap: wrap;
+      line-height: 3vw;
       font-family: 'AudioWide';
       justify-content:'center';
-      padding-top: 1vw;
+      padding-top: 2vw;
+      padding-bottom: 0vw;
     }
     .exeinfocont{
       width:100%;
@@ -180,6 +182,9 @@
       width: 29vw;
       margin-bottom: 16px;
       padding: 0 2vw;
+    }
+    .memcard{
+      border-radius: 10%;
     }
     .memcard p{
       font-size: 250%;
