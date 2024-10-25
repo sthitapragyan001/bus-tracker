@@ -14,7 +14,7 @@ const GPSData = () => {
   const [busav, setbusav] = useState('Inoperative')
   const [eta, seteta] = useState(null)
   const ADAFRUIT_IO_USERNAME = 'arnav_abhishek_';
-  const ADAFRUIT_IO_KEY = 'aio_Cclw60UE183p4OXCnS1F2Uamf5X6';
+  const ADAFRUIT_IO_KEY = 'aio_qPCI28vthoLqMW2mTJaqHsyFKQp7';
   const [closestbusstop, setclosestbusstop] = useState([null, Infinity]);
   const [udistance, setUdistance] = useState(Infinity);
   const [nextstop, setNextstop] = useState(null);
