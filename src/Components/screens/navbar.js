@@ -23,8 +23,8 @@ export default function Navbar(props) {
             <div style={{ display: 'inline' }}>
                 <a href="https://roboticsclub.iitd.ac.in" target="_blank" rel="noreferrer" style={{ float: 'left' }}><img src={require('./Logo.png')} height='50vh' width='70vw' /></a>
                 <b style={{ textAlign: 'center' }}>{props.heading}</b>
-                <div class="dropdown" style={{ display: 'inline', float: 'right' }}><button class="btn btn-sm" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><b style={{ fontSize: '170%', verticalAlign: 'top' }}>&#9776;</b></button>
-                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenu2" style={{ minWidth: 175 }}>
+                <div className="dropdown" style={{ display: 'inline', float: 'right' }}><button className="btn btn-sm" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><b style={{ fontSize: '170%', verticalAlign: 'top' }}>&#9776;</b></button>
+                    <div className="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenu2" style={{ minWidth: 175 }}>
                         <View style={styles.header} >
                             <View style={styles.headerText}>
                                 <a href='./#/Live_Location' style={{ textDecoration: 'none' }}>

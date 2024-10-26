@@ -141,7 +141,7 @@ export default function MapLeaflet(props) {
       {bus_stop_loc.map((bsl) => {
         // console.log(bsl)
         return (
-          <Marker id={bsl.name} position={[bsl.latitude, bsl.longitude]} icon={bstpicon}>
+          <Marker id={bsl.name} position={[bsl.latitude, bsl.longitude]} icon={bstpicon} key={bsl.name}>
             <Popup>
               Bus stop : {bsl.name}
             </Popup>

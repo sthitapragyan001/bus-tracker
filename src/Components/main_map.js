@@ -9,16 +9,13 @@ const haversine = require('haversine-distance');
 const GPSData = () => {
   const [latitude, setLatitude] = useState(28.54592009357561);
   const [longitude, setLongitude] = useState(77.1857909916675);
-  const [speed, setspeed] = useState(20)
-  const [modtime, setmodtime] = useState(null)
   const [busav, setbusav] = useState('Inoperative')
   const [eta, seteta] = useState(null)
-  const ADAFRUIT_IO_USERNAME = 'arnav_abhishek_';
-  const ADAFRUIT_IO_KEY = 'aio_qPCI28vthoLqMW2mTJaqHsyFKQp7';
+  const ADAFRUIT_IO_USERNAME = process.env.REACT_APP_ADAFRUIT_IO_USERNAME;
+  const ADAFRUIT_IO_KEY = process.env.REACT_APP_ADAFRUIT_IO_KEY;
   const [closestbusstop, setclosestbusstop] = useState([null, Infinity]);
   const [udistance, setUdistance] = useState(Infinity);
   const [nextstop, setNextstop] = useState(null);
-  const [nextstopdistance, setnextstopdistance] = useState(0)
   const bus_stop_length = bus_stop_loc.length;
   const fetchGPSData = async () => {
     try {
@@ -120,11 +117,8 @@ const GPSData = () => {
         tim = (t).toFixed(1) + ' mins'
       }
       setbusav(busav)
-      setnextstopdistance(nsd)
       setUdistance(nudistance)
-      setspeed(speed)
       seteta(tim)
-      setmodtime(modtime)
       setclosestbusstop([cstop.name, minDistance2]);
       setLatitude(closestPoint.latitude);
       setLongitude(closestPoint.longitude);
