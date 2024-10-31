@@ -68,10 +68,10 @@ export default function MapLeaflet(props) {
     // setpreviousIndex(closestIndex)
   }
   const movemap = async () => {
-    let hdist = Math.abs((parseFloat(coord.lon) - mapcenter[1])) * 340000
-    let vdist = Math.abs((parseFloat(coord.lat) - mapcenter[0])) * 340000
+    let hdist = Math.abs((parseFloat(coord.lon) - mapcenter[1])) * 350000
+    let vdist = Math.abs((parseFloat(coord.lat) - mapcenter[0])) * 350000
 
-    if (hdist > (window.innerWidth * 0.9) || vdist > (window.innerHeight * 0.9)) {
+    if (hdist > (window.innerWidth * 0.55) || vdist > (window.innerHeight * 0.55)) {
       setmapcenter([parseFloat(coord.lat), parseFloat(coord.lon)])
       setfly(true)
     }
