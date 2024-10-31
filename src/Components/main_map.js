@@ -76,18 +76,20 @@ const GPSData = () => {
         let ustop = bus_stop_loc[cbs + 1];
         let ucoord = { "latitude": parseFloat(ustop.latitude), "longitude": parseFloat(ustop.longitude) };
         nudistance = haversine(closestPoint, ucoord);
-        if ((minDistance2 > closestbusstop[1]) && (nudistance < udistance)) {
-          setNextstop(ustop.name);
-          nsd = nudistance
+        if (minDistance2 > closestbusstop[1]) {
+          if (nudistance < udistance) {
+            setNextstop(ustop.name);
+            nsd = nudistance
+          }
+          else {
+            let dstop = bus_stop_loc[cbs - 1];
+            let dcoord = { "latitude": parseFloat(dstop.latitude), "longitude": parseFloat(dstop.longitude) };
+            let ddistance = haversine(closestPoint, dcoord);
+            setNextstop(dstop.name);
+            nsd = ddistance
+          }
         }
-        else if ((minDistance2 > closestbusstop[1]) && (nudistance > udistance)) {
-          let dstop = bus_stop_loc[cbs - 1];
-          let dcoord = { "latitude": parseFloat(dstop.latitude), "longitude": parseFloat(dstop.longitude) };
-          let ddistance = haversine(closestPoint, dcoord);
-          setNextstop(dstop.name);
-          nsd = ddistance
-        }
-        else if (minDistance2 <= closestbusstop[1]) {
+        else if (minDistance2 < closestbusstop[1]) {
           setNextstop(cstop.name);
           nsd = minDistance2
         }
