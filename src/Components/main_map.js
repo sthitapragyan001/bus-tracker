@@ -122,10 +122,8 @@ const GPSData = () => {
       setUdistance(nudistance)
       seteta(tim)
       setclosestbusstop([cstop.name, minDistance2]);
-      // setLatitude(closestPoint.latitude);
-      // setLongitude(closestPoint.longitude);
-      setLatitude(latitude+0.0001);
-      setLongitude(longitude);
+      setLatitude(closestPoint.latitude);
+      setLongitude(closestPoint.longitude);
     } catch (error) {
       console.log(error)
       console.error('Error fetching data:', error);
