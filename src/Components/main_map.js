@@ -27,7 +27,7 @@ const GPSData = () => {
       };
 
       const [locationResponse] = await Promise.all([
-        axios.get(locationUrl, { headers }),
+        axios.get(locationUrl, { headers, params: { limit: 1 } }),
       ]);
       // let latitudedata= await fetch(latitudeUrl)
       // let latdata= await latitudedata.json()
