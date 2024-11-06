@@ -16,6 +16,7 @@ const GPSData = () => {
   const [closestbusstop, setclosestbusstop] = useState([null, Infinity]);
   const [udistance, setUdistance] = useState(Infinity);
   const [nextstop, setNextstop] = useState(null);
+  const [nsd, setnsd] = useState(null);
   const bus_stop_length = bus_stop_loc.length;
   const fetchGPSData = async () => {
     try {
@@ -36,6 +37,7 @@ const GPSData = () => {
       let closestIndex;
       let point = { "latitude": parseFloat(locationResponse.data[0].lat), "longitude": parseFloat(locationResponse.data[0].lon) }
       let speed = parseFloat(locationResponse.data[0].ele)
+      // let speed=10;
       let modtime = new Date(locationResponse.data[0].created_at)
       let curr = new Date();
       let busav = 'Inoperative';
@@ -70,7 +72,6 @@ const GPSData = () => {
         }
       })
       let cstop = bus_stop_loc[cbs];
-      let nsd;
       let nudistance;
       if (cbs < bus_stop_length - 1) {
         let ustop = bus_stop_loc[cbs + 1];
@@ -79,38 +80,44 @@ const GPSData = () => {
         if (minDistance2 > closestbusstop[1]) {
           if (nudistance < udistance) {
             setNextstop(ustop.name);
-            nsd = nudistance
+            let nsd = nudistance
+            setnsd(nsd)
           }
           else {
             let dstop = bus_stop_loc[cbs - 1];
             let dcoord = { "latitude": parseFloat(dstop.latitude), "longitude": parseFloat(dstop.longitude) };
             let ddistance = haversine(closestPoint, dcoord);
             setNextstop(dstop.name);
-            nsd = ddistance
+            let nsd = ddistance
+            setnsd(nsd)
           }
         }
         else if (minDistance2 < closestbusstop[1]) {
           setNextstop(cstop.name);
-          nsd = minDistance2
+          let nsd = minDistance2
+          setnsd(nsd)
         }
       }
       else {
         if (minDistance2 < closestbusstop[1]) {
           setNextstop(cstop.name);
-          nsd = minDistance2
+          let nsd = minDistance2
+          setnsd(nsd)
         }
         else {
           let dstop = bus_stop_loc[cbs - 1];
           let dcoord = { "latitude": parseFloat(dstop.latitude), "longitude": parseFloat(dstop.longitude) };
           let ddistance = haversine(closestPoint, dcoord);
           setNextstop(dstop.name);
-          nsd = ddistance
+          let nsd = ddistance
+          setnsd(nsd)
         }
       }
       if (speed === 0 || speed === null) {
         speed = 10
       }
       let t = nsd / (speed * 100 / 6);
+      
       let tim;
       if (t < 1) {
         tim = (t * 60).toFixed(0) + ' sec'
