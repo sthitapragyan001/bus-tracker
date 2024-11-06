@@ -114,7 +114,7 @@ const GPSData = () => {
         }
       }
       if (speed === 0 || speed === null) {
-        speed = 10
+        speed = 15
       }
       let t = nsd / (speed * 100 / 6);
       
@@ -153,7 +153,7 @@ const GPSData = () => {
             <h4>Next Stop: <mark>{nextstop}</mark></h4>
           </div>}
           {busav === 'Inoperative' && <div className='col-md'>
-            <h4><mark>Bus Inoperative</mark></h4>
+            <h4><mark>Bus is currently Inoperative</mark></h4>
           </div>}
           {busav === 'Running' && <div className='col-md'>
             <h4>Estimated Arrival Time:<mark>{eta}</mark></h4>
