@@ -117,20 +117,23 @@
   /* Some left and right padding inside the container */
   .infocont {
     width:100%;
-    min-height: 10vh;
+    height: 10vh;
     font-size:1.3vw;
     font-family: 'AudioWide';
     justify-content:'center';
-    padding-top: 1vw;
+    line-height: 2vh;
+    padding-top: 7%;
   }
   .exeinfocont{
     width:100%;
-    min-height: 10vh;
+    min-height: 5vh;
     font-size:1.2vw;
     font-family: 'AudioWide';
     display: flex;
     align-items: center;
+    vertical-align: middle;
     justify-content: center;
+    padding-top: 2%;
   }
 
   /* Display the columns below each other instead of side by side on small screens */
@@ -167,15 +170,17 @@
       line-height: 3vw;
       font-family: 'AudioWide';
       justify-content:'center';
-      padding-top: 2vw;
+      padding-top: 15%;
       padding-bottom: 0vw;
     }
     .exeinfocont{
       width:100%;
-      font-size:1.7vw;
+      font-size:1.4vw;
       font-family: 'AudioWide';
-      justify-content:'center';
-      padding-top: 1vw;
+      /* justify-content:center; */
+      vertical-align: middle;
+      height: 40px;
+      padding-top: 20%;
     }
     .columnthin {
       float: center;

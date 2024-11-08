@@ -28,7 +28,7 @@ const TeamStructure = () => {
       <div class="memcard" style={{ marginLeft: 'auto', marginRight: 'auto' }}>
         <img id='dp' src={require(`./pics/${member.id}.jpg`)} alt={member.name} style={{ borderRadius: 5, marginTop: '5%', aspectRatio:1,width:'90%'  }} />
         <div className="exeinfocont">
-          <p>{member.name}</p>
+          <p style={{paddingBottom:'0%'}}>{member.name}</p>
           {/* <p>{member.post}</p> */}
         </div>
         {/* <img id='arr' src={require('./downarrow.png')}/> */}
@@ -36,7 +36,7 @@ const TeamStructure = () => {
           <p>{member.dept} </p>
           <p>{member.hostel} </p>
         </div>
-        <div className='contact' style={{ display: 'inline-block',paddingBottom:'10%' }}>
+        <div className='contact' style={{ display: 'inline-block',paddingBottom:'1%',paddingTop:'0%',marginTop:'0%' }}>
           <a href={member.linkedin} target='_blank' ><img src={require('./linkedin.png')} width={'15%'} /></a>
           <a href={`mailto:${member.mail}`} target='_blank' ><img src={require('./mail.png')} width={'15%'} /></a>
         </div>
