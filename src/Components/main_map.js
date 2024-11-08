@@ -7,8 +7,8 @@ import bus_stop_loc from './bus_stops_data';
 
 const haversine = require('haversine-distance');
 const GPSData = () => {
-  const [latitude, setLatitude] = useState(28.54592009357561);
-  const [longitude, setLongitude] = useState(77.1857909916675);
+  const [latitude, setLatitude] = useState(28.545396761347078);
+  const [longitude, setLongitude] = useState(77.18716496818183);
   const [busav, setbusav] = useState('Inoperative')
   const [eta, seteta] = useState(null)
   const ADAFRUIT_IO_USERNAME = process.env.REACT_APP_ADAFRUIT_IO_USERNAME;
@@ -36,8 +36,8 @@ const GPSData = () => {
       // let londata= await longitudedata.json()
       let closestIndex;
       let point = { "latitude": parseFloat(locationResponse.data[0].lat), "longitude": parseFloat(locationResponse.data[0].lon) }
-      let speed = parseFloat(locationResponse.data[0].ele)
-      // let speed=10;
+      //let speed = parseFloat(locationResponse.data[0].ele)
+      let speed=25;
       let modtime = new Date(locationResponse.data[0].created_at)
       let curr = new Date();
       let busav = 'Inoperative';
@@ -114,7 +114,7 @@ const GPSData = () => {
         }
       }
       if (speed === 0 || speed === null) {
-        speed = 15
+        speed = 25
       }
       let t = nsd / (speed * 100 / 6);
       
@@ -183,7 +183,7 @@ const GPSData = () => {
       return (
         <div>
           {busav === 'Inoperative' && <div className='col-md'>
-            <h4><mark>Bus Inoperative</mark></h4>
+            <h4><mark>Bus is currently Inoperative</mark></h4>
             <MapLeaflet coord={null} />
           </div>}
         </div>
