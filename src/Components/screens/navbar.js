@@ -50,7 +50,7 @@ export default function Navbar(props) {
                         </a>
                     </li>
                     <li style={{ marginLeft: '5%' }}>
-                        <a href='https://roboticsclub.iitd.ac.in' target="_blank" rel="noreferrer" style={{ textDecoration: 'none' }}>
+                        <a href='sthitapragyan001.github.io/roboclub_web' target="_blank" rel="noreferrer" style={{ textDecoration: 'none' }}>
                             <Pressable style={styles.menuItem}>
                                 <Image source={require("./web-removebg-preview.png")} style={{ width: 20, height: 20, marginBottom: 0 }} />
                                 <Text style={styles.menuText}>Club Website</Text>
