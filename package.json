@@ -1,5 +1,7 @@
 {
-  "homepage": "https://sthitapragyan001.github.io/bus-tracker",
+  "//": "homepage: https://robotics-iitd.github.io/iitdshuttletrack",
+  "//": "homepage: https://sthitapragyan001.github.io/bus-tracker",
+  "homepage": "https://robotics-iitd.github.io/iitdshuttletrack",
   "name": "bus-tracker",
   "version": "0.1.0",
   "private": true,
