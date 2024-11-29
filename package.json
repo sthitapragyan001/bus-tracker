@@ -1,5 +1,4 @@
 {
-  "//": "homepage: https://robotics-iitd.github.io/iitdshuttletrack",
   "//": "homepage: https://sthitapragyan001.github.io/bus-tracker",
   "homepage": "https://robotics-iitd.github.io/iitdshuttletrack",
   "name": "bus-tracker",
@@ -14,7 +13,6 @@
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
-    "axios": "^1.7.3",
     "depcheck": "^1.4.7",
     "fs": "^0.0.1-security",
     "haversine-distance": "^1.2.3",

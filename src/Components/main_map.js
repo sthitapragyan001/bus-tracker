@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import axios from 'axios'; // npm install axios
+// import axios from 'axios'; npm install axios
 // import MapLeaflet from './map_leaflet';
 import MapLeaflet from './map_leaflet';
 import buspath from './output_path';
@@ -27,18 +27,24 @@ const GPSData = () => {
         'X-AIO-Key': ADAFRUIT_IO_KEY
       };
 
-      const [locationResponse] = await Promise.all([
-        axios.get(locationUrl, { headers, params: { limit: 1 } }),
-      ]);
+      // const [locationResponse] = await Promise.all([
+      //   axios.get(locationUrl, { headers, params: { limit: 1 } }),
+      // ]);
+
+      const [locationResponseData] = await fetch(locationUrl, { 
+        method: 'GET',headers: headers, params: { limit: 1 }
+      }).then(response => response.json());
       // let latitudedata= await fetch(latitudeUrl)
       // let latdata= await latitudedata.json()
       // let longitudedata= await fetch(longitudeUrl)
       // let londata= await longitudedata.json()
       let closestIndex;
-      let point = { "latitude": parseFloat(locationResponse.data[0].lat), "longitude": parseFloat(locationResponse.data[0].lon) }
-      //let speed = parseFloat(locationResponse.data[0].ele)
-      let speed=25;
-      let modtime = new Date(locationResponse.data[0].created_at)
+      let point = { "latitude": parseFloat(locationResponseData.lat), "longitude": parseFloat(locationResponseData.lon) }
+
+      // console.log(locationResponseData)
+      //let speed = parseFloat(locationResponseData.ele)
+      let speed=30;
+      let modtime = new Date(locationResponseData.created_at)
       let curr = new Date();
       let busav = 'Inoperative';
       if (modtime.toDateString() === curr.toDateString()) {
