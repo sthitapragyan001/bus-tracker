@@ -21,7 +21,7 @@ export default function Navbar(props) {
     return (
         <div className='container-fluid' style={{paddingTop:'1%', marginRight: '2%'}} >
             <div style={{ display: 'inline' }}>
-                <a href="../roboclub_web" target="_blank" rel="noreferrer" style={{ float: 'left' }}><img src={require('./Logo.png')} height='50vh' width='75vw' /></a>
+                <a href="https://roboticsclub.iitd.ac.in" target="_blank" rel="noreferrer" style={{ float: 'left' }}><img src={require('./Logo.png')} height='50vh' width='75vw' /></a>
                 <b style={{ textAlign: 'center' }}>{props.heading}</b>
                 <div className="dropdown" style={{ display: 'inline', float: 'right' }}><button className="btn btn-sm" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><b style={{ fontSize: '170%', verticalAlign: 'top' }}>&#9776;</b></button>
                     <div className="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenu2" style={{ minWidth: 175 }}>
@@ -50,7 +50,7 @@ export default function Navbar(props) {
                         </a>
                     </li>
                     <li style={{ marginLeft: '5%' }}>
-                        <a href='../roboclub_web' target="_blank" rel="noreferrer" style={{ textDecoration: 'none' }}>
+                        <a href='https://roboticsclub.iitd.ac.in' target="_blank" rel="noreferrer" style={{ textDecoration: 'none' }}>
                             <Pressable style={styles.menuItem}>
                                 <Image source={require("./web-removebg-preview.png")} style={{ width: 20, height: 20, marginBottom: 0 }} />
                                 <Text style={styles.menuText}>Club Website</Text>
